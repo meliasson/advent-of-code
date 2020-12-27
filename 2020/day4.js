@@ -39,9 +39,7 @@ const getNrOfValidPassports = (validationRules) => {
     .map((passport) => {
       return parsePassport(passport)
     })
-    .reduce((result, passport) => {
-      return (result += isValidPassport(passport, validationRules) ? 1 : 0)
-    }, 0)
+    .filter((passport) => isValidPassport(passport, validationRules)).length
 }
 
 const getPassports = () => {
