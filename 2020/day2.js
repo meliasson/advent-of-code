@@ -1,13 +1,11 @@
 const { getInput } = require('./input')
 
 const part1 = () => {
-  const records = getRecords()
-  return records.reduce(part1reducer, 0)
+  return getRecords().filter((r) => isValidPart1Password(r)).length
 }
 
 const part2 = () => {
-  const records = getRecords()
-  return records.reduce(part2reducer, 0)
+  return getRecords().filter((r) => isValidPart2Password(r)).length
 }
 
 const getRecords = () => {
@@ -20,15 +18,7 @@ const buildRecord = (parts) => {
   return { password: parts[4], policy: parts.slice(1, 4) }
 }
 
-const part1reducer = (result, record) => {
-  return isValidPart1Record(record) ? ++result : result
-}
-
-const part2reducer = (result, record) => {
-  return isValidPart2Record(record) ? ++result : result
-}
-
-const isValidPart1Record = (record) => {
+const isValidPart1Password = (record) => {
   const min = record.policy[0]
   const max = record.policy[1]
   const re = RegExp(`${record.policy[2]}`, 'g')
@@ -36,7 +26,7 @@ const isValidPart1Record = (record) => {
   return nrOfOccurences >= min && nrOfOccurences <= max
 }
 
-const isValidPart2Record = (record) => {
+const isValidPart2Password = (record) => {
   const l1 = record.password[record.policy[0] - 1]
   const l2 = record.password[record.policy[1] - 1]
   const l1Match = l1 === record.policy[2]
