@@ -11,7 +11,7 @@ const part2 = () => {
 }
 
 const getRecords = () => {
-  return getInput('day2-input')
+  return getInput({ filename: 'day2-input' })
     .map((rawRecord) => rawRecord.match(/(\d+)-(\d+)\s(\w):\s(\w+)/))
     .map((recordParts) => buildRecord(recordParts))
 }

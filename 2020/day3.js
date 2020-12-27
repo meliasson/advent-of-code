@@ -19,7 +19,7 @@ const part2 = () => {
 }
 
 const getMap = () => {
-  return getInput('day3-input')
+  return getInput({ filename: 'day3-input' })
 }
 
 const countTreesInSlopes = (map, slopes) => {

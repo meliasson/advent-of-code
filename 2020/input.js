@@ -1,9 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 
-const getInput = (filename) => {
+const getInput = ({ filename, separator = '\n' }) => {
   const fixturePath = path.resolve(__dirname, `./${filename}`)
-  return fs.readFileSync(fixturePath, 'utf8').trim().split('\n')
+  return fs.readFileSync(fixturePath, 'utf8').trim().split(separator)
 }
 
 module.exports = {

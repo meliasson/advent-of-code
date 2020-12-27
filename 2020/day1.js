@@ -11,7 +11,7 @@ const part2 = () => {
 }
 
 const getExpenseReport = () => {
-  return getInput('day1-input').map((entry) => parseInt(entry))
+  return getInput({ filename: 'day1-input' }).map((entry) => parseInt(entry))
 }
 
 const findEntries = (reportSlice, nrOfEntriesLeftToFind, soughtValue) => {
