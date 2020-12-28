@@ -2,6 +2,8 @@
 
 # Advent of Code 2020
 
+JS. All in on some good practices like TDD (Mocha), automatic linting (ESLint), code formatting (Prettier) and a little bit of CI (lint and test on push to GitHub via GitHub Actions).
+
 ## Day 1
 
 Using [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science) when summing numbers in order to fix an expense report. The recursive solution can sum an arbitrary amount of numbers, and therefore scales nicely, compared to brute-force solutions like nesting for loops.
