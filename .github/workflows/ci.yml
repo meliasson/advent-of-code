@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: yarn install
     - name: Lint
-      run: yarn eslint
+      run: yarn lint
   test:
     name: Test
     defaults:
@@ -42,4 +42,4 @@ jobs:
     - name: Install dependencies
       run: yarn install
     - name: Test
-      run: yarn mocha
+      run: yarn test

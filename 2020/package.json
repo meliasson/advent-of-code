@@ -6,7 +6,8 @@
   "author": "Santa",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "lint": "eslint .",
+    "test": "mocha"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
