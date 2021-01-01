@@ -1,7 +1,7 @@
 const assert = require('assert')
 const { part1, part2 } = require('../day2')
 
-describe('Day 2', function () {
+describe('Day 2: Password Philosophy', function () {
   describe('part 1', function () {
     it('validates passwords', function () {
       const result = part1()

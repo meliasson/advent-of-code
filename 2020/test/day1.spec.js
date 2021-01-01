@@ -1,7 +1,7 @@
 const assert = require('assert')
 const { part1, part2 } = require('../day1')
 
-describe('Day 1', function () {
+describe('Day 1: Report Repair', function () {
   describe('part 1', function () {
     it('finds two entries that sum to 2020', function () {
       const result = part1()
