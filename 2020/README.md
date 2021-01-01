@@ -27,3 +27,7 @@ Using only two integers, as upper and lower bounds, together with the boarding p
 ## Day 6: Custom Customs
 
 Using a simple object, together with map and reduce, to store and count answers.
+
+## Day 7: Handy Haversacks
+
+Using [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science) to traverse tree-like structures with ease.
