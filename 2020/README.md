@@ -31,3 +31,11 @@ Using a simple object, together with map and reduce, to store and count answers.
 ## Day 7: Handy Haversacks
 
 Using [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science) to traverse tree-like structures with ease.
+
+## Day 8: Handheld Halting
+
+...
+
+## Day 9: Encoding Error
+
+Using some old school for- and while-loops to slice arrays, sum numbers and abort when appropriate. And got to squeeze som spread syntax in.
