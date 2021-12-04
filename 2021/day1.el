@@ -11,7 +11,6 @@
 ;;
 
 (declare-function read-lines "ext:read-lines")
-(declare-function seq-reduce "ext:seq-reduce")
 
 ;;
 ;; External utilities
