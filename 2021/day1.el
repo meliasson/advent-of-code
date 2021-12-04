@@ -58,7 +58,7 @@
       (count-sliding-window-depth-increases 1000000000 depths))))
 
 (defun count-sliding-window-depth-increases (current-sliding-window-depth subsequent-depths)
-  "Start at CURRENT-DEPTH and recurse through SUBSEQUENT-DEPTHS."
+  "Start at CURRENT-SLIDING-WINDOW-DEPTH and recurse through SUBSEQUENT-DEPTHS."
   (if (> (length subsequent-depths) 2)
       (if (< current-sliding-window-depth (get-sliding-window-depth subsequent-depths))
           (+ 1 (count-sliding-window-depth-increases (get-sliding-window-depth subsequent-depths) (cdr subsequent-depths)))
