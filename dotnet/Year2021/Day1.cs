@@ -1,4 +1,5 @@
-namespace Calendar;
+namespace Year2021;
+
 public class Day1
   {
     public static int[] ParseInput(IEnumerable<String> input)

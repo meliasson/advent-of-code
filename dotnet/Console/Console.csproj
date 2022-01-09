@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Calendar\Calendar.csproj" />
+    <ProjectReference Include="..\Year2021\Year2021.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
