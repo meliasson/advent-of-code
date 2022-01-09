@@ -2,6 +2,4 @@
 
 # Advent of code
 
-- 2018 (Emacs Lisp. Barely started.)
-- 2019 (Emacs Lisp. Barely started.)
-- 2020 (JS. Barely started.)
+...
