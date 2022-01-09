@@ -7,7 +7,7 @@ jobs:
     name: Lint
     defaults:
       run:
-        working-directory: 2020
+        working-directory: js/2020
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -27,7 +27,7 @@ jobs:
     name: Test
     defaults:
       run:
-        working-directory: 2020
+        working-directory: js/2020
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
