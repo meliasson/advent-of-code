@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   lint:
-    name: Lint
+    name: Lint js/2020
     defaults:
       run:
         working-directory: js/2020
@@ -24,7 +24,7 @@ jobs:
     - name: Lint
       run: yarn lint
   test:
-    name: Test
+    name: Test js/2020
     defaults:
       run:
         working-directory: js/2020
