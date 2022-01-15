@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  lint:
+  lint-js-2020:
     name: Lint js/2020
     defaults:
       run:
@@ -23,7 +23,7 @@ jobs:
       run: yarn install
     - name: Lint
       run: yarn lint
-  test:
+  test-js-2020:
     name: Test js/2020
     defaults:
       run:
