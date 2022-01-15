@@ -3,6 +3,29 @@ name: CI
 on: [push]
 
 jobs:
+  test-dotnet:
+    name: Test dotnet
+    defaults:
+      run:
+        working-directory: dotnet
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        dotnet-version: [6.0.x]
+        os: [ubuntu-latest]
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Set up .Net Core SDK ${{ matrix.dotnet-version }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build solution
+      run: dotnet build --configuration Release --no-restore AdventOfCode.sln
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
   lint-js-2020:
     name: Lint js/2020
     defaults:
