@@ -25,7 +25,7 @@ jobs:
     - name: Build solution
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore
   lint-js-2020:
     name: Lint js/2020
     defaults:
