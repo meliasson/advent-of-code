@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build solution
-      run: dotnet build --configuration Release --no-restore AdventOfCode.sln
+      run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
   lint-js-2020:
