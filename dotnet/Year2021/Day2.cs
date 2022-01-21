@@ -19,7 +19,6 @@ public class Day2
         var position = course
             .Select((instruction) => ParseInstruction(instruction))
             .Aggregate(new PositionDelta(0, 0), (result, next) => AddPositionDeltas(result, next));
-        //Console.WriteLine(tmp.X);
         return position.X * position.Y;
     }
 
