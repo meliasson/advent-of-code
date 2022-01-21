@@ -6,12 +6,12 @@ namespace Year2021Test;
 public class Day1Test
 {
     [TestMethod]
-    public void SolvePart1_OnlyIncreasingDepths_ReturnsNrOfDepthIncreases()
+    public void SolvePart1_TestSample_ReturnsNrOfDepthIncreases()
     {
-        int[] input = new int[] { 1, 3, 100 };
+        int[] input = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
 
         var result = Year2021.Day1.SolvePart1(input);
 
-        Assert.AreEqual(2, result);
+        Assert.AreEqual(7, result);
     }
 }
