@@ -1,8 +1,8 @@
 namespace Year2021;
 
-public readonly struct PositionDelta
+public readonly struct Instruction
 {
-    public PositionDelta(int x, int y)
+    public Instruction(int x, int y)
     {
         X = x;
         Y = y;
@@ -16,13 +16,14 @@ public class Day2
 {
     public static int SolvePart1(string[] course)
     {
+        var startingPoint = new Instruction(0, 0);
         var position = course
             .Select((instruction) => ParseInstruction(instruction))
-            .Aggregate(new PositionDelta(0, 0), (result, next) => AddPositionDeltas(result, next));
+            .Aggregate(startingPoint, (result, next) => AddInstructions(result, next));
         return position.X * position.Y;
     }
 
-    private static PositionDelta ParseInstruction(string instruction)
+    private static Instruction ParseInstruction(string instruction)
     {
         var instructionParts = instruction.Split();
         var direction = instructionParts[0];
@@ -30,18 +31,18 @@ public class Day2
         switch (direction)
         {
             case "forward":
-                return new PositionDelta(amount, 0);
+                return new Instruction(amount, 0);
             case "down":
-                return new PositionDelta(0, amount);
+                return new Instruction(0, amount);
             case "up":
-                return new PositionDelta(0, -amount);
+                return new Instruction(0, -amount);
             default:
                 throw new Exception("Darn!");
         }
     }
 
-    private static PositionDelta AddPositionDeltas(PositionDelta p1, PositionDelta p2)
+    private static Instruction AddInstructions(Instruction p1, Instruction p2)
     {
-        return new PositionDelta(p1.X + p2.X, p1.Y + p2.Y);
+        return new Instruction(p1.X + p2.X, p1.Y + p2.Y);
     }
 }
