@@ -6,7 +6,7 @@ namespace Year2021Test;
 public class Day2Test
 {
     [TestMethod]
-    public void SolvePart1_TestSample_ReturnsHorizontalPositionMultipledWithDepth()
+    public void SolvePart1_TestSample_ReturnsHorizontalPositionMultipliedWithDepth()
     {
         string[] input = new string[] { "forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2" };
 
