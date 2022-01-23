@@ -3,7 +3,7 @@ namespace Year2021;
 record Instruction(string Direction, int Amount);
 record State(int X, int Y);
 
-public class Day2
+public static class Day2
 {
     public static int SolvePart1(string[] course)
     {
