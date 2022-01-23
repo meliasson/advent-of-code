@@ -5,15 +5,12 @@ record State(int X, int Y);
 
 public static class Day2
 {
-    public static int SolvePart1(string[] course)
-    {
-        return course
-            .Select((instruction) => ParseInstruction(instruction))
-            .Aggregate(
-                new State(0, 0),
-                (state, instruction) => AddInstruction(state, instruction),
-                (finalState) => finalState.X * finalState.Y);
-    }
+    public static int SolvePart1(string[] course) => course
+        .Select((instruction) => ParseInstruction(instruction))
+        .Aggregate(
+            new State(0, 0),
+            (state, instruction) => AddInstruction(state, instruction),
+            (finalState) => finalState.X * finalState.Y);
 
     private static Instruction ParseInstruction(string instruction)
     {
