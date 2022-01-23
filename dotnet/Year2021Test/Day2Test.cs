@@ -15,13 +15,13 @@ public class Day2Test
         Assert.AreEqual(150, result);
     }
 
-    // [TestMethod]
-    // public void SolvePart2_TestSample_ReturnsNrOfDepthIncreases()
-    // {
-    //     int[] input = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+    [TestMethod]
+    public void SolvePart2_TestSample_ReturnsNrOfDepthIncreases()
+    {
+        string[] input = new string[] { "forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2" };
 
-    //     var result = Year2021.Day1.SolvePart2(input);
+        var result = Year2021.Day2.SolvePart2(input);
 
-    //     Assert.AreEqual(5, result);
-    // }
+        Assert.AreEqual(900, result);
+    }
 }
