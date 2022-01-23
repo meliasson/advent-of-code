@@ -1,48 +1,33 @@
 namespace Year2021;
 
-public readonly struct Instruction
-{
-    public Instruction(int x, int y)
-    {
-        X = x;
-        Y = y;
-    }
-
-    public int X { get; }
-    public int Y { get; }
-}
+record Instruction(string Direction, int Amount);
+record State(int X, int Y);
 
 public class Day2
 {
     public static int SolvePart1(string[] course)
     {
-        var startingPoint = new Instruction(0, 0);
-        var position = course
+        return course
             .Select((instruction) => ParseInstruction(instruction))
-            .Aggregate(startingPoint, (result, next) => AddInstructions(result, next));
-        return position.X * position.Y;
+            .Aggregate(
+                new State(0, 0),
+                (state, instruction) => AddInstruction(state, instruction),
+                (finalState) => finalState.X * finalState.Y);
     }
 
     private static Instruction ParseInstruction(string instruction)
     {
-        var instructionParts = instruction.Split();
-        var direction = instructionParts[0];
-        var amount = Int32.Parse(instructionParts[1]);
-        switch (direction)
-        {
-            case "forward":
-                return new Instruction(amount, 0);
-            case "down":
-                return new Instruction(0, amount);
-            case "up":
-                return new Instruction(0, -amount);
-            default:
-                throw new Exception("Darn!");
-        }
+        var parts = instruction.Split();
+        var direction = parts[0];
+        var amount = int.Parse(parts[1]);
+        return new Instruction(direction, amount);
     }
 
-    private static Instruction AddInstructions(Instruction p1, Instruction p2)
+    private static State AddInstruction(State state, Instruction instruction) => instruction.Direction switch
     {
-        return new Instruction(p1.X + p2.X, p1.Y + p2.Y);
-    }
+        "forward" => state with { X = state.X + instruction.Amount },
+        "down" => state with { Y = state.Y + instruction.Amount },
+        "up" => state with { Y = state.Y - instruction.Amount },
+        _ => throw new Exception(),
+    };
 }
