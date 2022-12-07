@@ -1,0 +1,10 @@
+{
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useConstantStrings": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    "editor.formatOnSave": true
+}
