@@ -4,10 +4,10 @@ on: [push]
 
 jobs:
   test-dotnet:
-    name: Test dotnet
+    name: Test C#
     defaults:
       run:
-        working-directory: dotnet
+        working-directory: csharp
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
