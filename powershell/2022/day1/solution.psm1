@@ -3,20 +3,22 @@ function Get-CaloriesPerElf {
         $Path
     )
 
-    $elves = @(0)
+    $result = @(0)
     Get-Content -Path $Path |
         ForEach-Object {
             [int]$_
         } |
         ForEach-Object {
             if ($_) {
-                $elves[-1] += $_
+                # Add calories for existing elf.
+                $result[-1] += $_
             } else {
-                $elves += $_
+                # Add new elf.
+                $result += $_
             }
 
         }
-    $elves
+    $result
 }
 
 function Get-Day1Part1 {
@@ -24,10 +26,12 @@ function Get-Day1Part1 {
         $Path
     )
 
-    Get-CaloriesPerElf -Path $Path |
-        Sort-Object -Descending |
-        Select-Object -First 1 |
-        Measure-Object -Sum
+    (
+        Get-CaloriesPerElf -Path $Path |
+            Sort-Object -Descending |
+            Select-Object -First 1 |
+            Measure-Object -Sum
+    ).Sum
 }
 
 function Get-Day1Part2 {
@@ -35,10 +39,12 @@ function Get-Day1Part2 {
         $Path
     )
 
-    Get-CaloriesPerElf -Path $Path |
-        Sort-Object -Descending |
-        Select-Object -First 3 |
-        Measure-Object -Sum
+    (
+        Get-CaloriesPerElf -Path $Path |
+            Sort-Object -Descending |
+            Select-Object -First 3 |
+            Measure-Object -Sum
+    ).Sum
 }
 
 $exportModuleMemberArgs = @{
