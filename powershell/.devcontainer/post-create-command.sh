@@ -8,3 +8,8 @@ sudo chsh vscode -s \"$(which pwsh)\"
 
 # Setup PowerShell profile
 pwsh ./.devcontainer/setup-powershell-profile.ps1
+
+# Set VS Code as git editor.
+if [ "$(git config core.editor)" != "code --wait" ]; then
+    git config core.editor "code --wait"
+fi
