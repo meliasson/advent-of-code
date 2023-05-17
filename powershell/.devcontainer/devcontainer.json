@@ -5,11 +5,13 @@
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
 			"username": "vscode",
+			"uid": "1000",
+			"gid": "1000",
 			"upgradePackages": "false",
 			"nonFreePackages": "true"
 		}
 	},
-	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
+	"postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -19,7 +21,7 @@
 				"ms-vscode.powershell"
 			]
 		}
-	}
+	},
 	// "forwardPorts": [],
 	"remoteUser": "vscode"
 }
