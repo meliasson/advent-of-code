@@ -17,8 +17,8 @@ $symbolicLinkArgs = @{
 $null = New-Item @symbolicLinkArgs
 
 # Switch to Oh My Posh prompt.
-$contentArgs = @{
+$ohMyPoshContentArgs = @{
     Path  = $regularProfilePath
     Value = 'oh-my-posh init pwsh | Invoke-Expression'
 }
-Add-Content @contentArgs
+Add-Content @$ohMyPoshContentArgs
