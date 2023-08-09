@@ -1,5 +1,4 @@
 BeforeAll {
-
     Import-Module "$PSScriptRoot/Day3Solution.psm1"
 
     function Get-PuzzleInput {
