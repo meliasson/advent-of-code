@@ -9,7 +9,8 @@
 			"gid": "1000",
 			"upgradePackages": "false",
 			"nonFreePackages": "true"
-		}
+		},
+		"ghcr.io/devcontainers/features/dotnet:1": {}
 	},
 	"postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
 	"customizations": {
