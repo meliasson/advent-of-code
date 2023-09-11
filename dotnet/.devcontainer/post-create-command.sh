@@ -22,3 +22,8 @@ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
 # Set pwsh as default shell.
 sudo chsh vscode -s \"$(which pwsh)\"
+
+# Install Pester so we can run PowerShell tests.
+pwsh -NoProfile -Command "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted"
+pwsh -NoProfile -Command "Install-Module -Name Pester -Repository PSGallery"
+pwsh -NoProfile -Command "Set-PSRepository -Name PSGallery -InstallationPolicy Untrusted"
