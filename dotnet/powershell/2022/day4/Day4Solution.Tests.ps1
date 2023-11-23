@@ -1,5 +1,7 @@
+Set-StrictMode -Version 'Latest'
+
 BeforeAll {
-    Import-Module "$PSScriptRoot/Day4Solution.psm1"
+    Import-Module -Force "$PSScriptRoot/Day4Solution.psm1"
 
     function Get-PuzzleInput {
         @(
@@ -23,7 +25,7 @@ Describe 'Day 4' {
 
         $result = Get-Day4Part1 -Path './path-to-input-file'
 
-        $result | Should -Be 'foo'
+        $result | Should -Be 2
     }
 
     It 'part 2' {
@@ -35,6 +37,6 @@ Describe 'Day 4' {
 
         $result = Get-Day4Part2 -Path './path-to-input-file'
 
-        $result | Should -Be 'bar'
+        $result | Should -Be 4
     }
 }
