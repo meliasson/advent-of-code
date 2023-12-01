@@ -21,4 +21,24 @@ Describe 'Day 1' {
 
         $result | Should -Be 142
     }
+
+    It 'part 2' {
+        Mock -ModuleName 'Day1' Get-Content -MockWith {
+            @(
+                'two1nine'
+                'eightwothree'
+                'abcone2threexyz'
+                'xtwone3four'
+                '4nineeightseven2'
+                'zoneight234'
+                '7pqrstsixteen'
+            )
+        } -ParameterFilter {
+            $Path -eq './path-to-input-file'
+        }
+
+        $result = Get-Day1Part2 -Path './path-to-input-file'
+
+        $result | Should -Be 281
+    }
 }
