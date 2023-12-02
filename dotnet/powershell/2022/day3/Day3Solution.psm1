@@ -2,6 +2,7 @@ function Get-Priority {
     param(
         $ItemType
     )
+
     $priority = @{
         a = 1
         b = 2
