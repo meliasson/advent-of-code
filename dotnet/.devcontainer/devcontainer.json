@@ -1,27 +1,41 @@
 {
-	"name": "PowerShell",
-	"image": "mcr.microsoft.com/powershell:lts-debian-11",
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": "true",
-			"username": "vscode",
-			"uid": "1000",
-			"gid": "1000",
-			"upgradePackages": "false",
-			"nonFreePackages": "true"
-		},
-		"ghcr.io/devcontainers/features/dotnet:2": {}
-	},
-	"postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
-	"customizations": {
-		"vscode": {
-			"settings": {
-				"terminal.integrated.defaultProfile.linux": "pwsh"
-			},
-			"extensions": [
-				"ms-vscode.powershell"
-			]
-		}
-	},
-	"remoteUser": "vscode"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Let's focus on more important stuff than code formatting.
+        "csharpier.csharpier-vscode",
+        // With this extension we get by without Visual Studio?
+        "ms-dotnettools.csdevkit",
+        // Get support writing PowerShell code.
+        "ms-vscode.powershell"
+      ],
+      "settings": {
+        // Let's give PowerShell a chance.
+        "terminal.integrated.defaultProfile.linux": "pwsh"
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      // Let's not default to root because safety.
+      "username": "vscode"
+    },
+    // Install a suitable dotnet version.
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "8.0"
+    },
+    // Install Git, seems to be missing in os.
+    "ghcr.io/devcontainers/features/git:1": {},
+    // Let's give PowerShell a chance.
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "7.4.4"
+    }
+  },
+  "image": "ubuntu:22.04",
+  // Let's do some additional setup of the container that doesn't exist
+  // as devcontainer features.
+  "name": "Advent of Code",
+  "postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
+  // Let's not default to root because safety.
+  "remoteUser": "vscode"
 }
