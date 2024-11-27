@@ -16,20 +16,26 @@
     }
   },
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      // Let's not default to root because safety.
+      "username": "vscode"
+    },
     // Install a suitable dotnet version.
     "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "latest"
+      "version": "8.0"
     },
     // Install Git, seems to be missing in os.
     "ghcr.io/devcontainers/features/git:1": {},
     // Let's give PowerShell a chance.
     "ghcr.io/devcontainers/features/powershell:1": {
-      "version": "latest"
+      "version": "7.4.4"
     }
   },
-  "image": "ubuntu:latest",
+  "image": "ubuntu:22.04",
   // Let's do some additional setup of the container that doesn't exist
   // as devcontainer features.
   "name": "Advent of Code",
-  "postCreateCommand": "bash ./.devcontainer/post-create-command.sh"
+  "postCreateCommand": "bash ./.devcontainer/post-create-command.sh",
+  // Let's not default to root because safety.
+  "remoteUser": "vscode"
 }
