@@ -17,12 +17,22 @@ BeforeAll {
 
 Describe 'Day 1' {
     It 'part 1' {
-        Mock -ModuleName 'Day1Year2024' Get-Content -MockWith {
+        Mock -ModuleName 'Day1Year2024' -CommandName Get-Content -MockWith {
             Get-PuzzleInput
         }
 
         $result = Get-Day1Part1Year2024
 
         $result | Should -Be 11
+    }
+
+    It 'part 2' {
+        Mock -ModuleName 'Day1Year2024' -CommandName 'Get-Content' -MockWith {
+            Get-PuzzleInput
+        }
+
+        $result = Get-Day1Part2Year2024
+
+        $result | Should -Be 31
     }
 }
