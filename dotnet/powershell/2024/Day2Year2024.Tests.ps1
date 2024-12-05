@@ -25,4 +25,14 @@ Describe 'Day 2' {
 
         $result | Should -Be 2
     }
+
+    It 'part 2' {
+        Mock -ModuleName 'Day2Year2024' -CommandName Get-Content -MockWith {
+            Get-PuzzleInput
+        }
+
+        $result = Get-Day2Part2Year2024
+
+        $result | Should -Be 4
+    }
 }
